@@ -1,0 +1,38 @@
+<%- include('./partials/header') -%>
+<link rel="stylesheet" href="css/form.css">
+<div class="user-btns">
+    <li><a href="/user/saved-memories">Saved Memories</a></li>
+    <li><a href="/user/saved-blogs">Saved Blogs</a></li>
+    <li><a href="">Logout</a></li>
+  </div>
+<form action="/userBlog" method="POST" class="memform memoryForm" >
+    <div class="form-container">
+<div class="form-component">
+    <label>Title:</label>
+    <input type="text" class="form-control" name="blogTitle" autocomplete="off">
+</div>
+<div class="form-component">
+    <label>Intro: </label>
+    <textarea name="blogIntro" rows="6" cols="15"></textarea>
+</div>
+<div class="form-component">
+    <label>Main Content:</label>
+    <textarea name="blogBody1" class="f-blogBody" rows="7" cols="15" ></textarea>
+    <textarea name="blogBody2" class="f-blogBody" rows="7" cols="15" ></textarea>
+    <textarea name="blogBody3" class="f-blogBody" rows="7" cols="15" ></textarea>
+
+</div>
+<div class="form-component">
+    <label>Conclusion: </label>
+    <textarea name="blogConclusion" rows="6" cols="15"></textarea>
+</div>
+
+
+<button type="submit" name="button" class="btn">Publish</button>
+</div>
+
+</form>
+
+<script src="/js/first.js"></script>
+</body>
+

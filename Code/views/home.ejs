@@ -1,0 +1,84 @@
+<%- include('./partials/header') -%>
+<link rel="stylesheet" href="css/home.css">
+<div class="user-btns">
+  <li><a href="/user/savedmemories">Saved Memories</a></li>
+  <li><a href="">Saved Blogs</a></li>
+  <li><a href="">Logout</a></li>
+</div>
+
+<div class="homeContainer">
+    <div class="homeWrapper">
+      <div class="main-def" data-aos="fade-down">
+        
+          <h1>What is Nostalgia?</h1>
+          <div class="main-def-para">
+          <p>
+            Nostalgia is a place where people can write their favourite memories which they want to share with other people to read and share experience while similtaneously reliving and cherishing those memories.
+          </p>
+        </div>
+      
+      </div>
+      
+      <div class="memory-def">
+        <div class="memory-def-content" data-aos="fade-right">
+          <h2>Memories</h2>
+          
+
+  
+          <p>
+            
+            Memory is the act or an instance of remembering past experience.
+            Many can use this website not just to connect with others but specifically to reconnect with family and friends who live far away or who they haven’t seen in many years.
+            When people’s social needs are not being met, they are more inclined to nostalgically reflect on past meaningful social experiences, and doing so may help give them the feelings of social support, hope, and confidence needed to reconnect with people.
+          </p>
+          <br>
+        
+          <span><a href="/userMemory">Write a Memory</a></span>
+        </div>
+        <div class="memory-def-image" data-aos="fade-up">
+          <img src="/images/memory.png">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="blog-def">
+      <div class="blog-def-image" data-aos="fade-up">
+        <img src="/images/blog.jpg">
+      </div>
+      <div class="blog-def-content" data-aos="fade-down">
+        <h2>Blogs</h2>
+        
+        <p>
+          Our site is a platform where a writer or a group of writers share their views on an individual subject.
+          Moreover, people write blogs about their day to day life and how are they facing tough situations and encounter them.
+          One of the important benefits of blogging is its feature that helps us to network with a wide range of bloggers from different walks of life across the globe. Interacting with people from different country and culture may lead to friendly relations with them that may help you start new ventures like starting a new business with someone outside of your country.
+          
+
+        </p>
+    
+        <br>
+        
+
+        <span><a href="/userBlog">Write a Blog</a></span>
+      </div>
+      
+    </div>
+
+    </div>
+  </div>
+
+  <%- include('./partials/footer') -%>
+  <script src="/js/first.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true,
+      offset: 200
+    });
+  </script>
+</body>
+
+
+    

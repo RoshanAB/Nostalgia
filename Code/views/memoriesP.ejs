@@ -1,0 +1,66 @@
+<%- include('./partials/header') -%>
+
+<link rel="stylesheet" href="css/memoriesP.css">
+
+
+<div class="memories-wrapper">
+<div class="create-btn">
+  <span><a href="/userMemory">Write a Memory</a></span>
+</div>
+<div class="cards-container">
+    <% displayMemories.forEach(function(memory){ %>
+    
+    <div class="card" data-aos="fade-up">
+      <div class="card-container">
+        <div class="image">
+            <% if(memory.image){ %>
+            <img src="../uploads/<%= memory.image%>" alt="memImage">
+            <% } %>
+            <div class="writer-img">
+              <% if(memory.image){ %>
+                <img src="uploads/<%= memory.image%>" alt="userImage">
+                <% } %>
+            </div>
+        </div>
+        <div class="title">
+          <h2><%= memory.title %></h2>
+          
+        </div>
+        <div class="date">
+          <span><%= memory.date %></span>
+        </div>
+        <div class="body">
+          <% if (memory.body.length > 126) {%>
+          <p>          
+            <%= memory.body.substring(0, 127) + "..."%>
+            <a href="/memories/<%= memory._id %>">Read More</a>
+          </p>            
+            <% }else { %>
+              <p>          
+                <%= memory.body%>
+                </p>
+              
+              <% } %>
+            
+        </div>
+        <span class="author"><%= "-" + memory.author %></span>
+        <div class="like-comment">
+        
+          <span><a href="/memories/<%= memory._id %>?_method=PUT" class="like">Save</a></span>
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+</div>
+  <script src="/js/first.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true,
+      offset: 200
+    });
+  </script>
+</body>

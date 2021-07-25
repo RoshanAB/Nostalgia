@@ -1,0 +1,29 @@
+<%- include('./partials/header') -%>
+
+<link rel="stylesheet" href="/css/memory.css">
+
+
+
+<div class="single-memory-container">
+  <div class="single-memory">
+    <div class="single-memory-image">
+      <img src="../uploads/<%= image%>" alt="memoryImage">
+    </div>
+    <div class="single-memory-title">
+      <h2><%= title %></h2>
+    </div>
+    <div class="single-memory-date">
+      <span><%= date %></span>
+    </div>
+    <div class="single-memory-body">
+      <p><%= body %></p>
+    </div>
+    <div class="single-memory-author">
+      <span>-<%= author %></span>
+    </div>
+</div>
+  
+</div>
+
+<script src="/js/first.js"></script>
+</body>

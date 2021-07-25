@@ -1,0 +1,99 @@
+<%- include('./partials/header') -%>
+
+
+<link rel="stylesheet" href="/css/blogs.css">
+
+
+
+<div class="blogs-wrapper">
+<div class="create-btn">
+  <span><a href="/userBlog">Write a Blog</a></span>
+</div>
+<div class="blogs-container">
+ <% let i = 1 %>
+<% displayBlogs.forEach(function(blog){ %>
+  <% if(i %2 == 0){ %>
+    <div class="blog" data-aos="fade-left">
+    <% } else { %>
+    <div class="blog" data-aos="fade-right">
+   <% } %>
+    <% i = i + 1 %>
+    
+      <div class="blog-container">
+    <div class="vertical-line"></div>
+
+        <div class="blogTitle">
+          <h2><%= blog.title %></h2>
+        </div>
+        <hr />
+        <div class="blogIntro">
+          <h3>Introduction:</h3>
+          <% if (blog.intro) { %>
+          <p><%= blog.intro.substring(0, 120) + "..." %></p>
+          <% } %>
+        </div>
+        <hr />
+        <div class="blogBody">
+          <h3>Body:</h3>
+          <% if (blog.body1.length > 438) {%>
+            <p>          
+              <%= blog.body1.substring(0, 439) + "..."%>
+              <a href="/blogs/<%= blog._id %>">Read More</a>
+            </p>            
+              <% }else { %>
+                <p>          
+                  <%= blog.body1 + "..."%>
+                  <a href="/blogs/<%= blog._id %>">Read More</a>
+                  </p>
+                
+                <% } %>
+          
+          <!-- <h3>Body:</h3>
+          <p><%= blog.body1 + "..." %> 
+          <a href="/blogs/<%= blog._id %>">Read More</a></p> -->
+          <!-- <p><%= blog.body2 %></p>
+          <p><%= blog.body3 %></p> -->
+        </div>
+
+  
+        <!-- <div class="blogConclusion">
+          <h3>Conclusion:</h3>
+          <p><%= blog.conclusion %></p>
+        </div> -->
+      </div>
+      <span id="save-btn"><a href="/blogs/save/<%= blog._id %>?_method=PUT">Save</a></span>
+    </div>
+    
+    
+    
+<% }) %>
+  </div>
+</div>
+
+  <script src="/js/first.js"></script>
+  <script>
+    var line = document.getElementsByClassName('vertical-line');
+    function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  for(var i = 0; i < line.length; i ++){
+    line[i].style.backgroundColor = getRandomColor();
+  }
+
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true,
+      offset: 200
+    });
+  </script>
+</body>
+
