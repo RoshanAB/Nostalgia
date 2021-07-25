@@ -1,0 +1,134 @@
+
+.blogs-wrapper{
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-btn{
+  align-self: flex-end;
+  margin-right: 3rem;
+}
+
+.create-btn span {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #151424; */
+  background-color: white;
+  color: white;
+  
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.create-btn span a {
+  color: black;
+}
+
+.blogs-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: minmax(300px, auto);
+  width: 90%;
+  margin: 15rem auto;
+  margin-top: 1rem;
+  gap: 20px;
+}
+.blog {
+  width: 100%;
+  position: relative;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.blog-container {
+  padding: 1.4rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-blend-mode: soft-light, screen;
+}
+
+.vertical-line{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  /* border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; */
+  /* background-color: orange; */
+}
+
+.blogTitle {
+  height: 14%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.blogIntro {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blogBody {
+  height: 68%;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blogBody p {
+  margin-bottom: 1rem;
+}
+
+.blogBody p a {
+  color: blue;
+}
+
+.blogConclusion {
+  height: 15%;
+  width: 100%;
+}
+
+#save-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+#save-btn a {
+  color: white;
+}
+
+@media only screen and (max-width: 700px) {
+  .blogs-container {
+    grid-template-columns: 1fr;
+  }
+
+  .blog {
+    width: 100%;
+    height: 500px;
+  }
+}
